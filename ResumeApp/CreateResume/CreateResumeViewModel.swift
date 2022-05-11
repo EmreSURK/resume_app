@@ -16,12 +16,12 @@ class CreateResumeViewModel : BaseViewModelProtocol  {
         self.delegate = deletegate
     }
     
-    var hasUnsavedEdit = false;
+    var hasUnsavedEdit = true;
     
     func onUIReady() {
         // fetch the data.
-        DataProvider.getAllResumes {
-            delegate.updateUI();
+        DataProvider.getAllResumes { [weak self] in
+            self?.delegate.updateUI();
         }
     }
     
