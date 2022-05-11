@@ -184,15 +184,8 @@
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-It-QGx">
                                                     <rect key="frame" x="130" y="0.0" width="0.0" height="50"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="+">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="24" name="Helvetica"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Add Work">
+                                                        <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="btnAddWorkSummaryTapped:" destination="-1" eventType="touchUpInside" id="1Ts-GB-XaK"/>
@@ -246,15 +239,8 @@
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-DH-mGE">
                                                     <rect key="frame" x="130" y="0.0" width="0.0" height="50"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="+">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="24" name="Helvetica"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Add Skill">
+                                                        <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="btnAddSkillTapped:" destination="-1" eventType="touchUpInside" id="D4r-ge-Exk"/>
@@ -297,15 +283,8 @@
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTA-XB-GZ0">
                                                     <rect key="frame" x="130" y="0.0" width="0.0" height="50"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="+">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="24" name="Helvetica"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Add Education">
+                                                        <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="btnEducationWorkSummaryTapped:" destination="-1" eventType="touchUpInside" id="Uki-2g-iOr"/>

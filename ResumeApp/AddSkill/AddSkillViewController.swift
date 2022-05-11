@@ -27,6 +27,7 @@ class AddSkillViewController: BaseViewController {
     
     func initUI() {
         skillNameTextField.delegate = self
+        skillNameTextField.accessibilityIdentifier = "skill name"
     }
     
     func validateForm() -> Bool {
