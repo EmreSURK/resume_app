@@ -8,7 +8,7 @@
 import Foundation
 
 class ResumeModal : Codable {
-    var phoneNumber : String?
+    var mobileNumber : String?
     var emailAdress : String?
     var residenceAddress : String?
     var careerObjective : String?

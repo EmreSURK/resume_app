@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateResumeViewController: BaseViewController, UIAdaptivePresentationControllerDelegate {
+class CreateResumeViewController: BaseViewController {
     
     // we can also use diffent navigation styles. I leave that code as an eaxmple.
     /*static func push(sender : UIViewController) {
@@ -17,37 +17,48 @@ class CreateResumeViewController: BaseViewController, UIAdaptivePresentationCont
      sender.navigationController!.pushViewController(vc, animated: true)
      }*/
     
-    static func present(sender : UIViewController) {
+    static func present(sender : UIViewController, animated : Bool, resume : ResumeModal? = nil ) {
         let vc = CreateResumeViewController(nibName: CreateResumeViewController.className, bundle: nil)
-        vc.viewModel = CreateResumeViewModel(vc)
-        vc.isModalInPresentation = false
-        vc.presentationController?.delegate = vc
-        sender.present(vc, animated: true)
+        vc.viewModel = ResumeViewModel(vc)
+        vc.viewModel.resume = resume
+        vc.modalPresentationStyle = .fullScreen
+        sender.present(vc, animated: animated)
     }
     
-    var viewModel : CreateResumeViewModel! = nil
-    
-    // since that state is only UI oriented, I am not keeping in viewModel.
-    var dragInfoLabelState : CreateResumeDragLabelState = .none {
-        didSet {
-            // prevent updating UI if the new value is the same with oldValue.
-            if oldValue == dragInfoLabelState {
-                return
-            }
-            switch dragInfoLabelState {
-            case .none : dragInfoLabel.text = "" ; break;
-            case .dragMore : dragInfoLabel.text = "Drag down to go to back" ; break;
-            case .releaseToGoBack : dragInfoLabel.text = "Release to go to back" ; break;
-            }
-        }
-    }
+    var viewModel : ResumeViewModel! = nil
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var dragInfoLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var mobileNumberTextField: UITextField!
+    @IBOutlet weak var emailAdressTextField: UITextField!
+    @IBOutlet weak var residanceAddressTextField: UITextField!
+    @IBOutlet weak var careerObjectiveTextField: UITextField!
+    @IBOutlet weak var totalYearOfExperienceTextField: UITextField!
+    @IBOutlet weak var workSummaryTextField: UITextField!
+    @IBOutlet weak var projectDetailsTextField: UITextField!
+    
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var btnSave: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.delegate = self
+        initUI()
         viewModel.onUIReady()
+        
+        // make initial update.
+        updateUI()
+    }
+    
+    func initUI() {
+        navigationBar.delegate = self
+        mobileNumberTextField.delegate = self
+        emailAdressTextField.delegate = self
+        residanceAddressTextField.delegate = self
+        careerObjectiveTextField.delegate = self
+        totalYearOfExperienceTextField.delegate = self
+        workSummaryTextField.delegate = self
+        projectDetailsTextField.delegate = self
     }
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
@@ -57,56 +68,55 @@ class CreateResumeViewController: BaseViewController, UIAdaptivePresentationCont
         return true
     }
     
-    func showUnsavedAlertForDismiss() {
-        let alert = UIAlertController(title: "Yuo have unsaved work", message: "Are you sure to exit? You have unsaved work.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Save and Exit", style: .default, handler: { alert in
-            
-        }))
-        alert.addAction(UIAlertAction(title: "Exit Without Saving", style: .destructive, handler: { alert in
-            
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alert in
-            
-        }))
+    func showSavedAlert() {
+        let alert = UIAlertController(title: "Saved", message: "Your resume is saved.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
     
-    func userWantstoGoBack() {
-        if viewModel.hasUnsavedEdit {
-            showUnsavedAlertForDismiss()
-            return
-        }
-        dismiss(animated: true)
+    @IBAction func btnSaveTapped(_ sender: UIButton) {
+        viewModel.saveData()
+        showSavedAlert()
     }
-    
 }
 
 
 extension CreateResumeViewController : BaseViewModelDeletegate {
     func updateUI() {
         
+        // show loading indicator until the data is ready.
+        scrollView.isHidden = !viewModel.isInitialDataReady
+        activityIndicator.isHidden = viewModel.isInitialDataReady
+        btnSave.isHidden = !viewModel.hasUnsavedEdit
+        
+        mobileNumberTextField.text = viewModel.resume.mobileNumber
     }
 }
 
-extension CreateResumeViewController : UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.scrollView {
-            let offset =  scrollView.contentOffset;
-            if offset.y < -50 {
-                dragInfoLabelState = .releaseToGoBack
-            } else if offset.y > -50 && offset.y < -5  {
-                dragInfoLabelState = .dragMore
-            } else {
-                dragInfoLabelState = .none
-            }
+
+extension CreateResumeViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        switch textField {
+        case mobileNumberTextField: viewModel.resume.mobileNumber = textField.text; break;
+        case emailAdressTextField: viewModel.resume.emailAdress = textField.text; break;
+        case residanceAddressTextField: viewModel.resume.residenceAddress = textField.text; break;
+        case careerObjectiveTextField: viewModel.resume.careerObjective = textField.text; break;
+            //        caawdse totalYearOfExperienceTextField: viewModel.resume.totalYearsOfExperience = textField.text; break;
+        case workSummaryTextField: viewModel.resume.workSummary = textField.text;
+            //        case projectDetailsTextField: viewModel.resume.projectDetails = textField.text; break;
+        default: break
+            
         }
+        viewModel.userUpdatedData()
+        return true
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == self.scrollView {
-            if dragInfoLabelState == .releaseToGoBack {
-                userWantstoGoBack()
-            }
-        }
+}
+
+
+extension CreateResumeViewController : UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
