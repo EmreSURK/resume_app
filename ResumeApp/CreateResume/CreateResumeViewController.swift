@@ -35,8 +35,9 @@ class CreateResumeViewController: BaseViewController {
     @IBOutlet weak var residanceAddressTextField: UITextField!
     @IBOutlet weak var careerObjectiveTextField: UITextField!
     @IBOutlet weak var totalYearOfExperienceTextField: UITextField!
-    @IBOutlet weak var workSummaryTextField: UITextField!
     @IBOutlet weak var projectDetailsTextField: UITextField!
+    
+    @IBOutlet weak var workSummaryContainerStack: UIStackView!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var btnSave: UIButton!
@@ -57,8 +58,8 @@ class CreateResumeViewController: BaseViewController {
         residanceAddressTextField.delegate = self
         careerObjectiveTextField.delegate = self
         totalYearOfExperienceTextField.delegate = self
-        workSummaryTextField.delegate = self
         projectDetailsTextField.delegate = self
+                
     }
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
@@ -68,15 +69,13 @@ class CreateResumeViewController: BaseViewController {
         return true
     }
     
-    func showSavedAlert() {
-        let alert = UIAlertController(title: "Saved", message: "Your resume is saved.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+    @IBAction func btnAddWorkSummaryTapped(_ sender: UIButton) {
+        AddWorkSummaryViewController.present(sender: self, delegate: self)
     }
     
     @IBAction func btnSaveTapped(_ sender: UIButton) {
         viewModel.saveData()
-        showSavedAlert()
+        showsimpleAlert(title: "Saved", message: "Your resume is saved.")
     }
 }
 
@@ -90,6 +89,27 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
         btnSave.isHidden = !viewModel.hasUnsavedEdit
         
         mobileNumberTextField.text = viewModel.resume.mobileNumber
+        
+        
+        workSummaryContainerStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
+        viewModel.resume.workSummary.forEach { summary in
+            let nameLabel = UILabel()
+            nameLabel.font = UIFont.systemFont(ofSize: 14)
+            nameLabel.text = summary.companyName
+            
+            let durationLabel = UILabel()
+            durationLabel.text = summary.duration
+            durationLabel.font = UIFont.systemFont(ofSize: 14)
+            durationLabel.setContentHuggingPriority(.init(rawValue: 252), for: .horizontal)
+            
+            let stack = UIStackView(arrangedSubviews: [ nameLabel, durationLabel ])
+            stack.axis = .horizontal
+            workSummaryContainerStack.addArrangedSubview(stack)
+        }
+
     }
 }
 
@@ -104,7 +124,7 @@ extension CreateResumeViewController : UITextFieldDelegate {
         case residanceAddressTextField: viewModel.resume.residenceAddress = textField.text; break;
         case careerObjectiveTextField: viewModel.resume.careerObjective = textField.text; break;
             //        caawdse totalYearOfExperienceTextField: viewModel.resume.totalYearsOfExperience = textField.text; break;
-        case workSummaryTextField: viewModel.resume.workSummary = textField.text;
+//        case workSummaryTextField: viewModel.resume.workSummary = textField.text;
             //        case projectDetailsTextField: viewModel.resume.projectDetails = textField.text; break;
         default: break
             
@@ -118,5 +138,12 @@ extension CreateResumeViewController : UITextFieldDelegate {
 extension CreateResumeViewController : UINavigationBarDelegate {
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
+    }
+}
+
+extension CreateResumeViewController : AddWorkSummaryDelegate {
+    func summaryAdded(summary: WorkSummaryModal) {
+        viewModel.resume.workSummary.append(summary)
+        viewModel.userUpdatedData()
     }
 }

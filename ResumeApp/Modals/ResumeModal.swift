@@ -13,7 +13,7 @@ class ResumeModal : Codable {
     var residenceAddress : String?
     var careerObjective : String?
     var totalYearsOfExperience : Int?
-    var workSummary : String?
+    var workSummary : [WorkSummaryModal] = []
     var skills : [String] = []
     var educationDetails : [EducationDetailsModal] = []
     var projectDetails : [ProjectDetailsModal] = []

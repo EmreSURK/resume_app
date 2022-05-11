@@ -8,4 +8,4 @@
 -  When the project get big, XCode shows serious performance issues. I created screens with xib file instead of storyboards to make project lighweight.
 -  Instead of segues, I used static push functions to be able to implement Dependency Injection. We do not need to mind the next screen's data needings, the next screen already want them while initilizing.  
 - I organized the project as folders to make easier work on project as the team and the project go bigger.
-- 
+- Since we do not have havy data, I didnt use UITableview.

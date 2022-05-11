@@ -21,6 +21,10 @@
 		C312C85A282BF3CE0039B77D /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C859282BF3CE0039B77D /* UserDefaultKeys.swift */; };
 		C312C865282C1BFC0039B77D /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C312C864282C1BFC0039B77D /* SplashViewController.storyboard */; };
 		C312C867282C1C9B0039B77D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C866282C1C9B0039B77D /* SplashViewController.swift */; };
+		C312C86B282C38E20039B77D /* AddWorkSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */; };
+		C312C86C282C38E20039B77D /* AddWorkSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */; };
+		C312C86E282C3DFA0039B77D /* AddWorkSummaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */; };
+		C312C870282C3F030039B77D /* WorkSummaryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C86F282C3F020039B77D /* WorkSummaryModal.swift */; };
 		C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F64F282A9B25007E523F /* AppDelegate.swift */; };
 		C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F651282A9B25007E523F /* SceneDelegate.swift */; };
 		C3C3F654282A9B25007E523F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F653282A9B25007E523F /* HomeViewController.swift */; };
@@ -46,6 +50,10 @@
 		C312C859282BF3CE0039B77D /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		C312C864282C1BFC0039B77D /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		C312C866282C1C9B0039B77D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkSummaryViewController.swift; sourceTree = "<group>"; };
+		C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkSummaryViewController.xib; sourceTree = "<group>"; };
+		C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkSummaryProtocol.swift; sourceTree = "<group>"; };
+		C312C86F282C3F020039B77D /* WorkSummaryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSummaryModal.swift; sourceTree = "<group>"; };
 		C3C3F64C282A9B25007E523F /* ResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C3F64F282A9B25007E523F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C3F651282A9B25007E523F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C312C849282B0F740039B77D /* ResumeModal.swift */,
+				C312C86F282C3F020039B77D /* WorkSummaryModal.swift */,
 				C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */,
 				C312C855282BDF320039B77D /* EducationDetailsModal.swift */,
 			);
@@ -131,6 +140,16 @@
 			path = Disk;
 			sourceTree = "<group>";
 		};
+		C312C868282C38C90039B77D /* AddWorkSummary */ = {
+			isa = PBXGroup;
+			children = (
+				C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */,
+				C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */,
+				C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */,
+			);
+			path = AddWorkSummary;
+			sourceTree = "<group>";
+		};
 		C3C3F643282A9B25007E523F = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +170,7 @@
 		C3C3F64E282A9B25007E523F /* ResumeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C312C868282C38C90039B77D /* AddWorkSummary */,
 				C312C857282BF3B80039B77D /* Utils */,
 				C312C848282B0F690039B77D /* Modals */,
 				C312C843282B0E580039B77D /* Data */,
@@ -265,6 +285,7 @@
 			files = (
 				C3C3F65C282A9B26007E523F /* LaunchScreen.storyboard in Resources */,
 				C3C3F659282A9B26007E523F /* Assets.xcassets in Resources */,
+				C312C86C282C38E20039B77D /* AddWorkSummaryViewController.xib in Resources */,
 				C3C3F657282A9B25007E523F /* HomeViewController.storyboard in Resources */,
 				C3C3F667282B01E0007E523F /* CreateResumeViewController.xib in Resources */,
 				C312C865282C1BFC0039B77D /* SplashViewController.storyboard in Resources */,
@@ -282,7 +303,9 @@
 				C312C842282B07C40039B77D /* BaseViewModelDelegate.swift in Sources */,
 				C312C83B282B05590039B77D /* NSObject+Extensions.swift in Sources */,
 				C312C867282C1C9B0039B77D /* SplashViewController.swift in Sources */,
+				C312C86E282C3DFA0039B77D /* AddWorkSummaryProtocol.swift in Sources */,
 				C312C84A282B0F740039B77D /* ResumeModal.swift in Sources */,
+				C312C870282C3F030039B77D /* WorkSummaryModal.swift in Sources */,
 				C312C856282BDF320039B77D /* EducationDetailsModal.swift in Sources */,
 				C312C84E282BCAEF0039B77D /* CreateResumeUtils.swift in Sources */,
 				C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */,
@@ -294,6 +317,7 @@
 				C312C852282BD6B00039B77D /* UIViewController+Extensions.swift in Sources */,
 				C312C845282B0E670039B77D /* DiskDataProvider.swift in Sources */,
 				C312C840282B07610039B77D /* BaseViewModelProtocol.swift in Sources */,
+				C312C86B282C38E20039B77D /* AddWorkSummaryViewController.swift in Sources */,
 				C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
