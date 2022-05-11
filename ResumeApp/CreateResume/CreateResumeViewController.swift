@@ -39,6 +39,7 @@ class CreateResumeViewController: BaseViewController {
     
     @IBOutlet weak var workSummaryContainerStack: UIStackView!
     @IBOutlet weak var skillsContainerStack: UIStackView!
+    @IBOutlet weak var educationContainerStack: UIStackView!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var btnSave: UIButton!
@@ -69,6 +70,10 @@ class CreateResumeViewController: BaseViewController {
         }
         return true
     }
+   
+    @IBAction func btnEducationWorkSummaryTapped(_ sender: UIButton) {
+        AddEducationViewController.present(sender: self, delegate: self)
+    }
     
     @IBAction func btnAddWorkSummaryTapped(_ sender: UIButton) {
         AddWorkSummaryViewController.present(sender: self, delegate: self)
@@ -97,6 +102,7 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
         
         updateWorkSummary()
         updateSkills()
+        updateEducation()
     }
     
     func updateWorkSummary() {
@@ -105,13 +111,9 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
         }
         
         viewModel.resume.workSummary.forEach { summary in
-            let nameLabel = UILabel()
-            nameLabel.font = UIFont.systemFont(ofSize: 14)
-            nameLabel.text = summary.companyName
+            let nameLabel = listItemLabel(text:summary.companyName)
             
-            let durationLabel = UILabel()
-            durationLabel.text = summary.duration
-            durationLabel.font = UIFont.systemFont(ofSize: 14)
+            let durationLabel = listItemLabel(text:summary.duration)
             durationLabel.setContentHuggingPriority(.init(rawValue: 252), for: .horizontal)
             
             let stack = UIStackView(arrangedSubviews: [ nameLabel, durationLabel ])
@@ -126,13 +128,33 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
         }
         
         viewModel.resume.skills.forEach { skill in
-            let nameLabel = UILabel()
-            nameLabel.font = UIFont.systemFont(ofSize: 14)
-            nameLabel.text = skill
-            
-            skillsContainerStack.addArrangedSubview(nameLabel)
+            skillsContainerStack.addArrangedSubview(listItemLabel(text:skill))
         }
     }
+    
+    func updateEducation() {
+        educationContainerStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
+        viewModel.resume.educationDetails.forEach { education in
+            let classNameLabel = listItemLabel(text: education.className)
+            let passingYearLabel = listItemLabel(text: education.passingYear)
+            let cgpaLabel = listItemLabel(text: education.percentageCGPA)
+            let stack = UIStackView(arrangedSubviews: [classNameLabel,passingYearLabel,cgpaLabel])
+            stack.axis = .horizontal
+            
+            educationContainerStack.addArrangedSubview(stack)
+        }
+    }
+    
+    func listItemLabel(text : String? = "") -> UILabel {
+        let nameLabel = UILabel()
+        nameLabel.font = UIFont.systemFont(ofSize: 14)
+        nameLabel.text = text
+        return nameLabel
+    }
+    
 }
 
 
@@ -154,6 +176,23 @@ extension CreateResumeViewController : UITextFieldDelegate {
         viewModel.userUpdatedData()
         return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == mobileNumberTextField {
+            emailAdressTextField.becomeFirstResponder()
+        } else if textField == emailAdressTextField {
+            residanceAddressTextField.becomeFirstResponder()
+        } else if textField == residanceAddressTextField {
+            careerObjectiveTextField.becomeFirstResponder()
+        } else if textField == careerObjectiveTextField {
+            totalYearOfExperienceTextField.becomeFirstResponder()
+        } else if textField == totalYearOfExperienceTextField {
+            textField.endEditing(true)
+        }
+        
+        return true
+    }
+    
 }
 
 
@@ -173,6 +212,13 @@ extension CreateResumeViewController : AddWorkSummaryDelegate {
 extension CreateResumeViewController : AddSkillDelegate {
     func skillAdded(skill: String) {
         viewModel.resume.skills.append(skill)
+        viewModel.userUpdatedData()
+    }
+}
+
+extension CreateResumeViewController : AddEducationDelegate {
+    func educationAdded(education: EducationDetailsModal) {
+        viewModel.resume.educationDetails.append(education)
         viewModel.userUpdatedData()
     }
 }

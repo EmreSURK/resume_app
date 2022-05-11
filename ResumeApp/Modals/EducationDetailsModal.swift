@@ -10,6 +10,7 @@ import Foundation
 
 class EducationDetailsModal: Codable {
     var className : String?
-    var passingYear : Int?
-    var percentageCGPA : Float?
+    // I leave them as string since different countries may have different standarts. 
+    var passingYear : String?
+    var percentageCGPA : String?
 }

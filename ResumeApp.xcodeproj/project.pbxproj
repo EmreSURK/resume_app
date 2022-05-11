@@ -28,6 +28,9 @@
 		C3C33BE6282C5A61008D4B66 /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BE3282C5A61008D4B66 /* AddSkillViewController.swift */; };
 		C3C33BE7282C5A61008D4B66 /* AddSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C33BE4282C5A61008D4B66 /* AddSkillViewController.xib */; };
 		C3C33BE8282C5A61008D4B66 /* AddSkillProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BE5282C5A61008D4B66 /* AddSkillProtocol.swift */; };
+		C3C33BF4282C5BF5008D4B66 /* AddEducationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */; };
+		C3C33BF5282C5BF9008D4B66 /* AddEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */; };
+		C3C33BF6282C5BF9008D4B66 /* AddEducationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */; };
 		C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F64F282A9B25007E523F /* AppDelegate.swift */; };
 		C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F651282A9B25007E523F /* SceneDelegate.swift */; };
 		C3C3F654282A9B25007E523F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F653282A9B25007E523F /* HomeViewController.swift */; };
@@ -60,6 +63,9 @@
 		C3C33BE3282C5A61008D4B66 /* AddSkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
 		C3C33BE4282C5A61008D4B66 /* AddSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddSkillViewController.xib; sourceTree = "<group>"; };
 		C3C33BE5282C5A61008D4B66 /* AddSkillProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkillProtocol.swift; sourceTree = "<group>"; };
+		C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEducationProtocol.swift; sourceTree = "<group>"; };
+		C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEducationViewController.swift; sourceTree = "<group>"; };
+		C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEducationViewController.xib; sourceTree = "<group>"; };
 		C3C3F64C282A9B25007E523F /* ResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C3F64F282A9B25007E523F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C3F651282A9B25007E523F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,16 @@
 			path = AddSkill;
 			sourceTree = "<group>";
 		};
+		C3C33BF0282C5ACE008D4B66 /* AddEducation */ = {
+			isa = PBXGroup;
+			children = (
+				C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */,
+				C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */,
+				C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */,
+			);
+			path = AddEducation;
+			sourceTree = "<group>";
+		};
 		C3C3F643282A9B25007E523F = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +202,7 @@
 		C3C3F64E282A9B25007E523F /* ResumeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C3C33BF0282C5ACE008D4B66 /* AddEducation */,
 				C3C33BD6282C59A0008D4B66 /* AddSkill */,
 				C312C868282C38C90039B77D /* AddWorkSummary */,
 				C312C857282BF3B80039B77D /* Utils */,
@@ -303,6 +320,7 @@
 				C3C3F65C282A9B26007E523F /* LaunchScreen.storyboard in Resources */,
 				C3C3F659282A9B26007E523F /* Assets.xcassets in Resources */,
 				C312C86C282C38E20039B77D /* AddWorkSummaryViewController.xib in Resources */,
+				C3C33BF6282C5BF9008D4B66 /* AddEducationViewController.xib in Resources */,
 				C3C3F657282A9B25007E523F /* HomeViewController.storyboard in Resources */,
 				C3C3F667282B01E0007E523F /* CreateResumeViewController.xib in Resources */,
 				C3C33BE7282C5A61008D4B66 /* AddSkillViewController.xib in Resources */,
@@ -318,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C312C850282BD6520039B77D /* BaseViewController.swift in Sources */,
+				C3C33BF4282C5BF5008D4B66 /* AddEducationProtocol.swift in Sources */,
 				C312C842282B07C40039B77D /* BaseViewModelDelegate.swift in Sources */,
 				C312C83B282B05590039B77D /* NSObject+Extensions.swift in Sources */,
 				C312C867282C1C9B0039B77D /* SplashViewController.swift in Sources */,
@@ -330,6 +349,7 @@
 				C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */,
 				C3C3F654282A9B25007E523F /* HomeViewController.swift in Sources */,
 				C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */,
+				C3C33BF5282C5BF9008D4B66 /* AddEducationViewController.swift in Sources */,
 				C312C83D282B05F50039B77D /* ResumeViewModel.swift in Sources */,
 				C312C85A282BF3CE0039B77D /* UserDefaultKeys.swift in Sources */,
 				C3C33BE6282C5A61008D4B66 /* AddSkillViewController.swift in Sources */,

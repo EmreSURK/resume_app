@@ -13,7 +13,7 @@ class ResumeViewModel : BaseViewModelProtocol  {
     var delegate : BaseViewModelDeletegate! = nil
     var resume : ResumeModal! = nil
     var isResumeLoadedFromDisk = false;
-    var hasUnsavedEdit = true;
+    var hasUnsavedEdit = false;
     var isInitialDataReady: Bool {
         get {
             isResumeLoadedFromDisk
