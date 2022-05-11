@@ -9,5 +9,6 @@ import Foundation
 
 
 protocol BaseViewModelProtocol {
+    var isInitialDataReady: Bool { get }
     func onUIReady()
 }

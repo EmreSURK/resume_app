@@ -8,16 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		C312C83B282B05590039B77D /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C83A282B05590039B77D /* NSObject+Extensions.swift */; };
-		C312C83D282B05F50039B77D /* CreateResumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C83C282B05F50039B77D /* CreateResumeViewModel.swift */; };
+		C312C83D282B05F50039B77D /* ResumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C83C282B05F50039B77D /* ResumeViewModel.swift */; };
 		C312C840282B07610039B77D /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C83F282B07610039B77D /* BaseViewModelProtocol.swift */; };
 		C312C842282B07C40039B77D /* BaseViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C841282B07C40039B77D /* BaseViewModelDelegate.swift */; };
-		C312C845282B0E670039B77D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C844282B0E670039B77D /* DataProvider.swift */; };
-		C312C847282B0F170039B77D /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C846282B0F170039B77D /* UserDefaultsKeys.swift */; };
+		C312C845282B0E670039B77D /* DiskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C844282B0E670039B77D /* DiskDataProvider.swift */; };
 		C312C84A282B0F740039B77D /* ResumeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C849282B0F740039B77D /* ResumeModal.swift */; };
+		C312C84E282BCAEF0039B77D /* CreateResumeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C84D282BCAEF0039B77D /* CreateResumeUtils.swift */; };
+		C312C850282BD6520039B77D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C84F282BD6520039B77D /* BaseViewController.swift */; };
+		C312C852282BD6B00039B77D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C851282BD6B00039B77D /* UIViewController+Extensions.swift */; };
+		C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */; };
+		C312C856282BDF320039B77D /* EducationDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C855282BDF320039B77D /* EducationDetailsModal.swift */; };
+		C312C85A282BF3CE0039B77D /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C859282BF3CE0039B77D /* UserDefaultKeys.swift */; };
+		C312C865282C1BFC0039B77D /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C312C864282C1BFC0039B77D /* SplashViewController.storyboard */; };
+		C312C867282C1C9B0039B77D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C866282C1C9B0039B77D /* SplashViewController.swift */; };
+		C312C86B282C38E20039B77D /* AddWorkSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */; };
+		C312C86C282C38E20039B77D /* AddWorkSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */; };
+		C312C86E282C3DFA0039B77D /* AddWorkSummaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */; };
+		C312C870282C3F030039B77D /* WorkSummaryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C86F282C3F020039B77D /* WorkSummaryModal.swift */; };
+		C3C33BE6282C5A61008D4B66 /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BE3282C5A61008D4B66 /* AddSkillViewController.swift */; };
+		C3C33BE7282C5A61008D4B66 /* AddSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C33BE4282C5A61008D4B66 /* AddSkillViewController.xib */; };
+		C3C33BE8282C5A61008D4B66 /* AddSkillProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BE5282C5A61008D4B66 /* AddSkillProtocol.swift */; };
+		C3C33BF4282C5BF5008D4B66 /* AddEducationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */; };
+		C3C33BF5282C5BF9008D4B66 /* AddEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */; };
+		C3C33BF6282C5BF9008D4B66 /* AddEducationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */; };
 		C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F64F282A9B25007E523F /* AppDelegate.swift */; };
 		C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F651282A9B25007E523F /* SceneDelegate.swift */; };
-		C3C3F654282A9B25007E523F /* MyResumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F653282A9B25007E523F /* MyResumesViewController.swift */; };
-		C3C3F657282A9B25007E523F /* MyResumesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C3F655282A9B25007E523F /* MyResumesViewController.storyboard */; };
+		C3C3F654282A9B25007E523F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F653282A9B25007E523F /* HomeViewController.swift */; };
+		C3C3F657282A9B25007E523F /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C3F655282A9B25007E523F /* HomeViewController.storyboard */; };
 		C3C3F659282A9B26007E523F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C3F658282A9B26007E523F /* Assets.xcassets */; };
 		C3C3F65C282A9B26007E523F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C3F65A282A9B26007E523F /* LaunchScreen.storyboard */; };
 		C3C3F666282B01E0007E523F /* CreateResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F664282B01E0007E523F /* CreateResumeViewController.swift */; };
@@ -26,17 +43,34 @@
 
 /* Begin PBXFileReference section */
 		C312C83A282B05590039B77D /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
-		C312C83C282B05F50039B77D /* CreateResumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResumeViewModel.swift; sourceTree = "<group>"; };
+		C312C83C282B05F50039B77D /* ResumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewModel.swift; sourceTree = "<group>"; };
 		C312C83F282B07610039B77D /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
 		C312C841282B07C40039B77D /* BaseViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelDelegate.swift; sourceTree = "<group>"; };
-		C312C844282B0E670039B77D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		C312C846282B0F170039B77D /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		C312C844282B0E670039B77D /* DiskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskDataProvider.swift; sourceTree = "<group>"; };
 		C312C849282B0F740039B77D /* ResumeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeModal.swift; sourceTree = "<group>"; };
+		C312C84D282BCAEF0039B77D /* CreateResumeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResumeUtils.swift; sourceTree = "<group>"; };
+		C312C84F282BD6520039B77D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C312C851282BD6B00039B77D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsModal.swift; sourceTree = "<group>"; };
+		C312C855282BDF320039B77D /* EducationDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailsModal.swift; sourceTree = "<group>"; };
+		C312C859282BF3CE0039B77D /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		C312C864282C1BFC0039B77D /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
+		C312C866282C1C9B0039B77D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkSummaryViewController.swift; sourceTree = "<group>"; };
+		C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkSummaryViewController.xib; sourceTree = "<group>"; };
+		C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkSummaryProtocol.swift; sourceTree = "<group>"; };
+		C312C86F282C3F020039B77D /* WorkSummaryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSummaryModal.swift; sourceTree = "<group>"; };
+		C3C33BE3282C5A61008D4B66 /* AddSkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
+		C3C33BE4282C5A61008D4B66 /* AddSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddSkillViewController.xib; sourceTree = "<group>"; };
+		C3C33BE5282C5A61008D4B66 /* AddSkillProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkillProtocol.swift; sourceTree = "<group>"; };
+		C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEducationProtocol.swift; sourceTree = "<group>"; };
+		C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEducationViewController.swift; sourceTree = "<group>"; };
+		C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEducationViewController.xib; sourceTree = "<group>"; };
 		C3C3F64C282A9B25007E523F /* ResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C3F64F282A9B25007E523F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C3F651282A9B25007E523F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C3C3F653282A9B25007E523F /* MyResumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResumesViewController.swift; sourceTree = "<group>"; };
-		C3C3F656282A9B25007E523F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyResumesViewController.storyboard; sourceTree = "<group>"; };
+		C3C3F653282A9B25007E523F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C3C3F656282A9B25007E523F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		C3C3F658282A9B26007E523F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3C3F65B282A9B26007E523F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3C3F65D282A9B26007E523F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C312C83A282B05590039B77D /* NSObject+Extensions.swift */,
+				C312C851282BD6B00039B77D /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -69,6 +104,7 @@
 			children = (
 				C312C83F282B07610039B77D /* BaseViewModelProtocol.swift */,
 				C312C841282B07C40039B77D /* BaseViewModelDelegate.swift */,
+				C312C84F282BD6520039B77D /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -76,8 +112,7 @@
 		C312C843282B0E580039B77D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C312C844282B0E670039B77D /* DataProvider.swift */,
-				C312C846282B0F170039B77D /* UserDefaultsKeys.swift */,
+				C312C85C282BF7E60039B77D /* Disk */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -86,8 +121,65 @@
 			isa = PBXGroup;
 			children = (
 				C312C849282B0F740039B77D /* ResumeModal.swift */,
+				C312C86F282C3F020039B77D /* WorkSummaryModal.swift */,
+				C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */,
+				C312C855282BDF320039B77D /* EducationDetailsModal.swift */,
 			);
 			path = Modals;
+			sourceTree = "<group>";
+		};
+		C312C857282BF3B80039B77D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C312C858282BF3BE0039B77D /* Constants */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C312C858282BF3BE0039B77D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C312C859282BF3CE0039B77D /* UserDefaultKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C312C85C282BF7E60039B77D /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				C312C844282B0E670039B77D /* DiskDataProvider.swift */,
+			);
+			path = Disk;
+			sourceTree = "<group>";
+		};
+		C312C868282C38C90039B77D /* AddWorkSummary */ = {
+			isa = PBXGroup;
+			children = (
+				C312C869282C38E20039B77D /* AddWorkSummaryViewController.swift */,
+				C312C86A282C38E20039B77D /* AddWorkSummaryViewController.xib */,
+				C312C86D282C3DFA0039B77D /* AddWorkSummaryProtocol.swift */,
+			);
+			path = AddWorkSummary;
+			sourceTree = "<group>";
+		};
+		C3C33BD6282C59A0008D4B66 /* AddSkill */ = {
+			isa = PBXGroup;
+			children = (
+				C3C33BE5282C5A61008D4B66 /* AddSkillProtocol.swift */,
+				C3C33BE3282C5A61008D4B66 /* AddSkillViewController.swift */,
+				C3C33BE4282C5A61008D4B66 /* AddSkillViewController.xib */,
+			);
+			path = AddSkill;
+			sourceTree = "<group>";
+		};
+		C3C33BF0282C5ACE008D4B66 /* AddEducation */ = {
+			isa = PBXGroup;
+			children = (
+				C3C33BF1282C5AD9008D4B66 /* AddEducationProtocol.swift */,
+				C3C33BF2282C5B13008D4B66 /* AddEducationViewController.swift */,
+				C3C33BF3282C5B60008D4B66 /* AddEducationViewController.xib */,
+			);
+			path = AddEducation;
 			sourceTree = "<group>";
 		};
 		C3C3F643282A9B25007E523F = {
@@ -110,13 +202,17 @@
 		C3C3F64E282A9B25007E523F /* ResumeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C3C33BF0282C5ACE008D4B66 /* AddEducation */,
+				C3C33BD6282C59A0008D4B66 /* AddSkill */,
+				C312C868282C38C90039B77D /* AddWorkSummary */,
+				C312C857282BF3B80039B77D /* Utils */,
 				C312C848282B0F690039B77D /* Modals */,
 				C312C843282B0E580039B77D /* Data */,
 				C312C83E282B07530039B77D /* Base */,
 				C312C839282B05450039B77D /* Extensions */,
 				C3C3F65D282A9B26007E523F /* Info.plist */,
 				C3C3F66B282B0237007E523F /* Support Files */,
-				C3C3F669282B01FA007E523F /* MyResumes */,
+				C3C3F669282B01FA007E523F /* Home */,
 				C3C3F66A282B0223007E523F /* Splash */,
 				C3C3F668282B01E9007E523F /* CreateResume */,
 			);
@@ -128,24 +224,27 @@
 			children = (
 				C3C3F664282B01E0007E523F /* CreateResumeViewController.swift */,
 				C3C3F665282B01E0007E523F /* CreateResumeViewController.xib */,
-				C312C83C282B05F50039B77D /* CreateResumeViewModel.swift */,
+				C312C83C282B05F50039B77D /* ResumeViewModel.swift */,
+				C312C84D282BCAEF0039B77D /* CreateResumeUtils.swift */,
 			);
 			path = CreateResume;
 			sourceTree = "<group>";
 		};
-		C3C3F669282B01FA007E523F /* MyResumes */ = {
+		C3C3F669282B01FA007E523F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C3C3F653282A9B25007E523F /* MyResumesViewController.swift */,
-				C3C3F655282A9B25007E523F /* MyResumesViewController.storyboard */,
+				C3C3F653282A9B25007E523F /* HomeViewController.swift */,
+				C3C3F655282A9B25007E523F /* HomeViewController.storyboard */,
 			);
-			path = MyResumes;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C3C3F66A282B0223007E523F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				C3C3F65A282A9B26007E523F /* LaunchScreen.storyboard */,
+				C312C864282C1BFC0039B77D /* SplashViewController.storyboard */,
+				C312C866282C1C9B0039B77D /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -220,8 +319,12 @@
 			files = (
 				C3C3F65C282A9B26007E523F /* LaunchScreen.storyboard in Resources */,
 				C3C3F659282A9B26007E523F /* Assets.xcassets in Resources */,
-				C3C3F657282A9B25007E523F /* MyResumesViewController.storyboard in Resources */,
+				C312C86C282C38E20039B77D /* AddWorkSummaryViewController.xib in Resources */,
+				C3C33BF6282C5BF9008D4B66 /* AddEducationViewController.xib in Resources */,
+				C3C3F657282A9B25007E523F /* HomeViewController.storyboard in Resources */,
 				C3C3F667282B01E0007E523F /* CreateResumeViewController.xib in Resources */,
+				C3C33BE7282C5A61008D4B66 /* AddSkillViewController.xib in Resources */,
+				C312C865282C1BFC0039B77D /* SplashViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,16 +335,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C312C850282BD6520039B77D /* BaseViewController.swift in Sources */,
+				C3C33BF4282C5BF5008D4B66 /* AddEducationProtocol.swift in Sources */,
 				C312C842282B07C40039B77D /* BaseViewModelDelegate.swift in Sources */,
 				C312C83B282B05590039B77D /* NSObject+Extensions.swift in Sources */,
-				C312C847282B0F170039B77D /* UserDefaultsKeys.swift in Sources */,
+				C312C867282C1C9B0039B77D /* SplashViewController.swift in Sources */,
+				C312C86E282C3DFA0039B77D /* AddWorkSummaryProtocol.swift in Sources */,
 				C312C84A282B0F740039B77D /* ResumeModal.swift in Sources */,
-				C3C3F654282A9B25007E523F /* MyResumesViewController.swift in Sources */,
+				C312C870282C3F030039B77D /* WorkSummaryModal.swift in Sources */,
+				C312C856282BDF320039B77D /* EducationDetailsModal.swift in Sources */,
+				C312C84E282BCAEF0039B77D /* CreateResumeUtils.swift in Sources */,
+				C3C33BE8282C5A61008D4B66 /* AddSkillProtocol.swift in Sources */,
+				C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */,
+				C3C3F654282A9B25007E523F /* HomeViewController.swift in Sources */,
 				C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */,
-				C312C83D282B05F50039B77D /* CreateResumeViewModel.swift in Sources */,
+				C3C33BF5282C5BF9008D4B66 /* AddEducationViewController.swift in Sources */,
+				C312C83D282B05F50039B77D /* ResumeViewModel.swift in Sources */,
+				C312C85A282BF3CE0039B77D /* UserDefaultKeys.swift in Sources */,
+				C3C33BE6282C5A61008D4B66 /* AddSkillViewController.swift in Sources */,
 				C3C3F666282B01E0007E523F /* CreateResumeViewController.swift in Sources */,
-				C312C845282B0E670039B77D /* DataProvider.swift in Sources */,
+				C312C852282BD6B00039B77D /* UIViewController+Extensions.swift in Sources */,
+				C312C845282B0E670039B77D /* DiskDataProvider.swift in Sources */,
 				C312C840282B07610039B77D /* BaseViewModelProtocol.swift in Sources */,
+				C312C86B282C38E20039B77D /* AddWorkSummaryViewController.swift in Sources */,
 				C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,12 +365,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C3C3F655282A9B25007E523F /* MyResumesViewController.storyboard */ = {
+		C3C3F655282A9B25007E523F /* HomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C3C3F656282A9B25007E523F /* Base */,
 			);
-			name = MyResumesViewController.storyboard;
+			name = HomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		C3C3F65A282A9B26007E523F /* LaunchScreen.storyboard */ = {
@@ -393,7 +509,7 @@
 				INFOPLIST_FILE = ResumeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MyResumesViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -422,7 +538,7 @@
 				INFOPLIST_FILE = ResumeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MyResumesViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
