@@ -38,6 +38,7 @@ class CreateResumeViewController: BaseViewController {
     @IBOutlet weak var projectDetailsTextField: UITextField!
     
     @IBOutlet weak var workSummaryContainerStack: UIStackView!
+    @IBOutlet weak var skillsContainerStack: UIStackView!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var btnSave: UIButton!
@@ -73,6 +74,10 @@ class CreateResumeViewController: BaseViewController {
         AddWorkSummaryViewController.present(sender: self, delegate: self)
     }
     
+    @IBAction func btnAddSkillTapped(_ sender: UIButton) {
+        AddSkillViewController.present(sender: self, delegate: self)
+    }
+    
     @IBAction func btnSaveTapped(_ sender: UIButton) {
         viewModel.saveData()
         showsimpleAlert(title: "Saved", message: "Your resume is saved.")
@@ -90,7 +95,11 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
         
         mobileNumberTextField.text = viewModel.resume.mobileNumber
         
-        
+        updateWorkSummary()
+        updateSkills()
+    }
+    
+    func updateWorkSummary() {
         workSummaryContainerStack.subviews.forEach { view in
             view.removeFromSuperview()
         }
@@ -109,7 +118,20 @@ extension CreateResumeViewController : BaseViewModelDeletegate {
             stack.axis = .horizontal
             workSummaryContainerStack.addArrangedSubview(stack)
         }
-
+    }
+    
+    func updateSkills() {
+        skillsContainerStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
+        viewModel.resume.skills.forEach { skill in
+            let nameLabel = UILabel()
+            nameLabel.font = UIFont.systemFont(ofSize: 14)
+            nameLabel.text = skill
+            
+            skillsContainerStack.addArrangedSubview(nameLabel)
+        }
     }
 }
 
@@ -144,6 +166,13 @@ extension CreateResumeViewController : UINavigationBarDelegate {
 extension CreateResumeViewController : AddWorkSummaryDelegate {
     func summaryAdded(summary: WorkSummaryModal) {
         viewModel.resume.workSummary.append(summary)
+        viewModel.userUpdatedData()
+    }
+}
+
+extension CreateResumeViewController : AddSkillDelegate {
+    func skillAdded(skill: String) {
+        viewModel.resume.skills.append(skill)
         viewModel.userUpdatedData()
     }
 }
