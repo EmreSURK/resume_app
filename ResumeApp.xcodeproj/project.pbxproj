@@ -17,6 +17,8 @@
 		C312C84E282BCAEF0039B77D /* CreateResumeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C84D282BCAEF0039B77D /* CreateResumeUtils.swift */; };
 		C312C850282BD6520039B77D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C84F282BD6520039B77D /* BaseViewController.swift */; };
 		C312C852282BD6B00039B77D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C851282BD6B00039B77D /* UIViewController+Extensions.swift */; };
+		C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */; };
+		C312C856282BDF320039B77D /* EducationDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C312C855282BDF320039B77D /* EducationDetailsModal.swift */; };
 		C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F64F282A9B25007E523F /* AppDelegate.swift */; };
 		C3C3F652282A9B25007E523F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F651282A9B25007E523F /* SceneDelegate.swift */; };
 		C3C3F654282A9B25007E523F /* MyResumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3F653282A9B25007E523F /* MyResumesViewController.swift */; };
@@ -38,6 +40,8 @@
 		C312C84D282BCAEF0039B77D /* CreateResumeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResumeUtils.swift; sourceTree = "<group>"; };
 		C312C84F282BD6520039B77D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C312C851282BD6B00039B77D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsModal.swift; sourceTree = "<group>"; };
+		C312C855282BDF320039B77D /* EducationDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailsModal.swift; sourceTree = "<group>"; };
 		C3C3F64C282A9B25007E523F /* ResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C3F64F282A9B25007E523F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C3F651282A9B25007E523F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				C312C849282B0F740039B77D /* ResumeModal.swift */,
+				C312C853282BDCC90039B77D /* ProjectDetailsModal.swift */,
+				C312C855282BDF320039B77D /* EducationDetailsModal.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 				C312C83B282B05590039B77D /* NSObject+Extensions.swift in Sources */,
 				C312C847282B0F170039B77D /* UserDefaultsKeys.swift in Sources */,
 				C312C84A282B0F740039B77D /* ResumeModal.swift in Sources */,
+				C312C856282BDF320039B77D /* EducationDetailsModal.swift in Sources */,
 				C312C84E282BCAEF0039B77D /* CreateResumeUtils.swift in Sources */,
+				C312C854282BDCC90039B77D /* ProjectDetailsModal.swift in Sources */,
 				C3C3F654282A9B25007E523F /* MyResumesViewController.swift in Sources */,
 				C3C3F650282A9B25007E523F /* AppDelegate.swift in Sources */,
 				C312C83D282B05F50039B77D /* CreateResumeViewModel.swift in Sources */,
